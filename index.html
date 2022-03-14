@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 
 <head>
 
@@ -9,7 +8,7 @@
     <link rel="apple-touch-icon" type="image/png" href="favicon.ico" />
     <meta name="apple-mobile-web-app-title" content="utshob">
 
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 
     <link rel="mask-icon" type="image/x-icon" href="favicon.ico" color="#111" />
 
@@ -128,10 +127,12 @@
                 stroke-width: 0px;
             }
         }
+
     </style>
 
     <script>
         window.console = window.console || function(t) {};
+
     </script>
 
 
@@ -140,6 +141,7 @@
         if (document.location.search.match(/type=embed/gi)) {
             window.parent.postMessage("resize", "*");
         }
+
     </script>
 
 
@@ -174,10 +176,45 @@
                 text.classList.add('is-active');
             }, 500);
         });
-        
+
+    </script>
+
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "1603573706612728");
+        chatbox.setAttribute("attribution", "biz_inbox");
+
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                xfbml: true,
+                version: 'v13.0'
+            });
+        };
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
     </script>
 
 
 
-</body></html>
- 
+</body>
+
+</html>
