@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <link rel="apple-touch-icon" type="image/png" href="favicon.ico" />
+    <meta name="apple-mobile-web-app-title" content="utshob">
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+
+    <link rel="mask-icon" type="image/x-icon" href="favicon.ico" color="#111" />
+
+
+    <title>Utshob</title>
+
+
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #171717;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .reload {
+            position: absolute;
+            font-family: "Roboto", sans-serif;
+            top: 25px;
+            right: 25px;
+            color: #171717;
+            background-color: #F3F3F3;
+            padding: 15px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .logo {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+        }
+
+        .logo .icon {
+            width: 50%;
+            max-width: 300px;
+        }
+
+        .logo .icon path {
+            color: #F3F3F3;
+            stroke-width: 3px;
+            stroke-dashoffset: -3000;
+            stroke-dasharray: 3000;
+        }
+
+        .logo .icon path.is-active {
+            animation-name: icon;
+            animation-duration: 4s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        .logo .text {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .logo .text text {
+            color: #F3F3F3;
+            stroke-width: 3px;
+            stroke-dashoffset: -800;
+            stroke-dasharray: 800;
+        }
+
+        .logo .text text.is-active {
+            animation-name: text;
+            animation-duration: 4s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes icon {
+            50% {
+                stroke-dashoffset: 0;
+                fill: transparent;
+            }
+
+            75% {
+                fill: transparent;
+                stroke-width: 3px;
+            }
+
+            100% {
+                stroke-dashoffset: 0;
+                fill: #00acee;
+                stroke-width: 0px;
+            }
+        }
+
+        @keyframes text {
+            50% {
+                fill: transparent;
+            }
+
+            75% {
+                fill: transparent;
+                stroke-dashoffset: 0;
+                stroke-width: 3px;
+            }
+
+            100% {
+                stroke-dashoffset: 0;
+                fill: #F3F3F3;
+                stroke-width: 0px;
+            }
+        }
+    </style>
+
+    <script>
+        window.console = window.console || function(t) {};
+    </script>
+
+
+
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+
+
+</head>
+
+<body translate="no">
+    <div class="logo">
+        <svg class="icon" viewBox="0 0 635 660">
+            <path stroke="#F3F3F3" fill="none" class="is-active" d="M514.005 92.2219C494.819 101.02 474.391 106.809 453.441 109.384C475.214 95.897 491.939 74.5403 499.808 49.0921C479.206 61.7503 456.546 70.7023 432.855 75.5426C413.616 54.3555 386.209 41.12 355.863 41.12C297.627 41.12 250.4 89.9192 250.4 150.114C250.4 158.656 251.341 166.978 253.14 174.955C165.493 170.412 87.7963 127.02 35.7795 61.0786C26.3732 77.8034 21.4542 96.6774 21.5006 115.866C21.5006 153.681 40.1177 187.05 68.4134 206.587C51.615 206.03 35.2113 201.351 20.6474 192.961C20.6371 193.418 20.6371 193.876 20.6371 194.338C20.6371 247.136 56.9872 291.202 105.231 301.214C89.7268 305.572 73.4135 306.215 57.6143 303.09C71.0245 346.39 109.975 377.903 156.127 378.782C120.04 408.018 74.5711 425.438 25.1603 425.438C16.7504 425.437 8.34833 424.927 0 423.911C46.6712 454.844 102.106 472.88 161.648 472.88C355.616 472.88 461.69 306.796 461.69 162.753C461.69 158.024 461.587 153.326 461.387 148.654C482.132 133.11 499.949 114.002 514.005 92.2219V92.2219Z" />
+        </svg>
+        <svg class="text" viewBox="0 0 850 125">
+            <text fill="none" stroke="#fff" transform="translate(3 102)" stroke-width="3" font-size="102" font-family="Montserrat-Black, Montserrat" font-weight="800" letter-spacing="0.7em" class="is-active">
+                <tspan>Utshob</tspan>
+            </text>
+        </svg>
+    </div>
+    <div class="reload">Reload</div>
+
+
+    <script id="rendered-js">
+        const reload_btn = document.querySelector('.reload');
+
+        reload_btn.addEventListener('click', function() {
+            let icon = document.querySelector('.icon path');
+            let text = document.querySelector('.text text');
+
+            icon.classList.remove('is-active');
+            text.classList.remove('is-active');
+
+            setTimeout(function() {
+                icon.classList.add('is-active');
+                text.classList.add('is-active');
+            }, 500);
+        });
+        
+    </script>
+
+
+
+</body></html>
+ 
