@@ -1,7 +1,4 @@
-- 👋 Hi, I’m @utshob
-- 👀 I’m interested in coding
-- 🌱 I’m currently learning tensorflow
-- 💞️ I’m looking to collaborate on .....
+
 - 📫 How to reach me utshob@email.com
 
 <!---
